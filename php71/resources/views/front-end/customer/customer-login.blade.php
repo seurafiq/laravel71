@@ -17,9 +17,10 @@
 
                 <div class="row">
                     <div class="col-md-5 well">
-                        <h3 class="text-center text-success">Register if you are not Registered before!!!</h3>
-                    </br>
-                        {{ Form::open(['route'=>'customer-sign-up', 'method'=>'POST']) }}
+                        <h3 class="text-center text-success">Registered Here</h3>
+
+                        </br>
+                        {{ Form::open(['method'=>'POST']) }}
                         <div class="form-group">
                             <input type="text" name="first_name" class="form-control" placeholder="First_Name">
                         </div>
@@ -42,12 +43,12 @@
                             <input type="submit" name="btn" class="form-control btn btn-info" value="Register">
                         </div>
                         {{ Form::close() }}
-                </div>
+                    </div>
                     <div class="col-md-5 well" style="margin-left: 20px;">
-                        <h3 class="text-center text-success">Already Registered? Login Here</h3>
+                        <h3 class="text-center text-success">Login Here</h3>
                         <h4 class="text-center text-danger">{{Session::get('message')}}</h4>
                         <br/>
-                        {{ Form::open(['route'=>'customer-login', 'method'=>'POST'])}}
+                        {{ Form::open(['method'=>'POST'])}}
                         <div class="form-group">
                             <input type="email" name="email_address" class="form-control" placeholder="example@gmail.com">
                         </div>

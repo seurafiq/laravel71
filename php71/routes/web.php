@@ -81,8 +81,29 @@ Route::get('/complete/order',[
     'as' => 'complete-order'
 
 ]);
+Route::post('/customer/login',[
+    'uses' => 'CheckoutController@customerLoginCheck',
+    'as' => 'customer-login'
 
-/*Checkout starts here*/
+]);
+
+/*Checkout ends here*/
+
+
+
+/*menu customize starts here*/
+Route::post('/checkout/customer-logout',[
+    'uses' => 'CheckoutController@customerLogout',
+    'as' => 'customer-logout'
+
+]);
+Route::get('/checkout/new-customer/login',[
+    'uses' => 'CheckoutController@newCustomerLogin',
+    'as' => 'new-customer-login'
+
+]);
+
+/*menu customize ends here*/
 
 
 
@@ -192,6 +213,25 @@ Route::post('/product/update/',[
     'as' => 'update-product'
 ]);
 /*Product Info ends here*/
+
+
+
+/*Manage order starts here*/
+Route::get('/order/manage-order/',[
+    'uses' => 'OrderController@manageOrderInfo',
+    'as' => 'manage-order'
+]);
+Route::get('/order/view-order-detail/{id}',[
+    'uses' => 'OrderController@viewOrderDetail',
+    'as' => 'view-order-detail'
+]);
+Route::get('/order/view-order-invoice/{id}',[
+    'uses' => 'OrderController@viewOrderInvoice',
+    'as' => 'view-order-invoice'
+]);
+
+/*Manage order starts here*/
+
 
 
 
